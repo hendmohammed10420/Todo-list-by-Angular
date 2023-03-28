@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav ">
+      <li class="nav-item col-4">
+        <a class="navbar-brand " href="#" [routerLink]="['user']" routerLinkActive="active">
+        
+        <img src="../../assets/Handoz.jpg" class="rounded-circle" alt="" width="50" height="50" border-r>
+        </a>
+     
+        </li>
+      <div class="navbar-nav col-6" *ngFor="let user of user">
+        <li class="nav-item ">
+
+          <a class="nav-link active" href="#">{{user.username}}</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link active " href="#">{{user.quote}}</a>
+        </li>
+        <li class="nav-item " class="fa">
+
+        </li>
+      </div>
+    </ul>
+    <ul class="navbar-nav col-6 ">
+      <li class="nav-item col-4 ">
+        <a class="nav-link active" [routerLink]="['Favorite']" routerLinkActive="active" (click)=" getAllFavorites()"
+          href="#"><i class="fa d-inline-flex p-2 bd-highlight">&#xf004;</i>{{ getCountFavorite()}}</a>
+      </li>
+      <li class="nav-item col-4 ">
+        <a class="nav-link active" [routerLink]="['deleted']" routerLinkActive="active" (click)=" getAllFavorites()"
+          href="#"><i class="fa d-inline-flex p-2 bd-highlight">&#xf1f8;</i>{{getCountdeleted()}}</a>
+      </li>
+      <li class="nav-item  ">
+        <a class="nav-link active" [routerLink]="['deleted']" routerLinkActive="active" href="#">
+          Completed:  {{completedTodo()}}%</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ">
+        <li class="nav-item  ">
+        <a class="nav-link active" [routerLink]="['/login']" routerLinkActive="active" href="#">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      </li>
+    </ul>
+
+
+
+  </div>
+</nav>

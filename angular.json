@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Todo": {
+    "todos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/todo",
+            "outputPath": "dist/todos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Todo:build:production"
+              "browserTarget": "todos:build:production"
             },
             "development": {
-              "browserTarget": "Todo:build:development"
+              "browserTarget": "todos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Todo:build"
+            "browserTarget": "todos:build"
           }
         },
         "test": {
@@ -94,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "17821c8c-4245-4ab9-acc5-91467d482716"
   }
 }

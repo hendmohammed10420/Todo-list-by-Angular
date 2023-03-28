@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div ngif="todo" class="todo" class="list-group">
+
+  <ul class="list-group mb-0 col-12">
+
+    <li class="list-group-item ">
+      <div class="form-check">
+        <i type="checkbox" class="to-do-list" class="fa fa-check " (click)="Done()" job="complete" id="0"></i>
+
+        <label class="form-check-label" for="flexCheckDefault"
+          [ngStyle]=" { 'text-decoration' :todo.completed ? 'none' :'line-through'}">
+          {{todo.todo}}
+        </label>
+      </div>
+
+      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa">&#xf1f8;</i>   
+      </button>
+  
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">delete</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are You Sure?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="DeleteItem()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button  [ngStyle]="{'background-color':todo.favorite? 'red':''}" class="btn btn-outline-secondary"
+        type="button" (click)="AddToFavorite()"><i class="fa">&#xf004;</i></button>
+    </li>
+  </ul>
+</div>

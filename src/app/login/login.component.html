@@ -1,0 +1,41 @@
+<section class="ReactiveForm">
+  <div class="wrapper">
+    <form class="form-signin" [formGroup]="myForm" (ngSubmit)="submit()">
+      <h2 class="form-signin-heading" class="text-center">Login</h2>
+      <br>
+      <br>
+      <br>
+      <!-- <li class="nav-item col-4"> -->
+        <!-- <a class="navbar-brand " href="#" [routerLink]="['user']" routerLinkActive="active"> -->
+          <div class="text-center">
+          <img src="../../assets/Handoz.jpg" class="text-center" class="rounded-circle" alt="" width="90" height="90" border-r>
+          </div>
+        <!-- </a> -->
+      <!-- </li> -->
+      <br>
+      <br>
+      <br>
+      <label for="quote">Quote:</label>
+
+      <input type="text" class="form-control" formControlName="qoute" name="username"
+        placeholder="Enter your favorite qoute" required="" autofocus="" />
+      <p *ngIf="myForm.get('qoute')?.touched &&myForm.get('qoute')?.errors?.['required']"
+        class="text-danger text-uppercase">This feild is required</p>
+      
+        <br>
+        <label for="quote">Username:</label>
+
+      <input type="text" class="form-control" name="UserName" placeholder="Enter your name" formControlName="username"
+        required="" />
+      <p *ngIf="myForm.get('username')?.touched &&myForm.get('username')?.errors?.['required']"
+        class="text-danger text-uppercase">username is required</p>
+        <br>
+        <br>
+        <div class="text-center">
+
+      <button (click)=" setUser()" class="btn btn-lg  btn-info btn-block justify-content-center"
+        type="submit">Login</button>
+        </div>
+    </form>
+  </div>
+</section>

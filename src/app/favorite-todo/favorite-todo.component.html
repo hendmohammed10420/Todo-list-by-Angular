@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <section class="vh-100" style="background-color: #e2d5de;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h1 class="text-center">Your favorite list</h1>
+              <div class="input-group mb-3">
+                <br>
+                <br>
+                
+              </div>
+              <div class="list-group">
+                <ul class="list-group mb-0 col-12" *ngFor="let item of favorite">
+                  <li class="list-group-item "
+                    [ngStyle]=" { 'text-decoration' :item.completed ? 'none' :'line-through'}">
+                    {{item.todo}}
+
+                    <!-- <button class="btn btn-outline-secondary " type="button">
+
+                      <i class="fa-regular fa-trash-can">
+
+                      </i></button> -->
+                    <!-- <button class="btn btn-outline-secondary" type="button"><i class="fa">&#xf00c;</i>
+                    </button> -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
